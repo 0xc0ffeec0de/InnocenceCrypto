@@ -17,7 +17,7 @@ int main(int argc, char *argv[]){
 		char *Crypt = crypt(pass, "li");
 
 		printf("Pass  :: %s\n", pass);
-		printf("Crypt :: %s\n\n", Crypt);
+		printf("Crypt :: $%s\n\n", Crypt);
 		
 		
 		puts("Continue [y/n] :: ");
