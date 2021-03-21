@@ -14,7 +14,7 @@ int main(int argc, char *argv[]){
 		scanf("\n%s", *&pass);
 		
 		puts("\n");
-		char *Crypt = crypt(pass, "lip");
+		char *Crypt = crypt(pass, "li");
 
 		printf("Pass  :: %s\n", pass);
 		printf("Crypt :: %s\n\n", Crypt);
