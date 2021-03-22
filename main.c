@@ -1,4 +1,4 @@
-*/
+/*
 Coded by :: Mob
 Compile :: gcc -Wall main.c -o main -lcrypt
 
