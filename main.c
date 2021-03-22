@@ -28,7 +28,7 @@ int main(void){
     }while(option == 'y');
 
             if(option == 'n'){
-                    puts("Bye");
+                    puts("[Bye]");
             }
 
     return 0;
