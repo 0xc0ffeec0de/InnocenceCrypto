@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
 /*
 Coded by :: Mob
 Compile :: gcc -Wall main.c -o main -lcrypt
@@ -5,17 +9,12 @@ Compile :: gcc -Wall main.c -o main -lcrypt
 execute :: ./main
 
 */
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 
 int len(char *ler){ 
         while(*ler != 0){
                 printf("%x", *ler++);
         }
-
 return 0;
-
 }
 
 int main(void){
@@ -29,10 +28,8 @@ int main(void){
         }
 
         char option;
-    
         char *pass;
-        MALLOC(pass, sizeof(int));
-        free(pass);
+        MALLOC(pass, sizeof(char));
 
     do{
             char *c = crypt(pass, "da");
@@ -58,6 +55,7 @@ int main(void){
             }else
                     printf("[Option Invalid]");
             
-
+    free(pass);
     return 0;
+
 }
