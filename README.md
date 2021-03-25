@@ -14,7 +14,7 @@
         
 ### Info
      
-     CryptOM It is in maintenance!
+     CryptOM Beta!
 
 ### Badges
 ![Lang](https://img.shields.io/badge/C-language-black)
