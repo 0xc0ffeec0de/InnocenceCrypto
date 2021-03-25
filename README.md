@@ -16,7 +16,11 @@
      
      CryptOM It is in maintenance!
 
-###  Badges
+### Badges
 ![Lang](https://img.shields.io/badge/C-language-black)
 ![Version](https://img.shields.io/badge/version-2.1.2-blue)
 ![Info](https://img.shields.io/badge/info-maintenance-red)
+
+### Illustration
+
+![Gif](https://images-ext-2.discordapp.net/external/qwm8gNTVP5dZx8g9AuWeaiac-wHG0XDQ9i8rombODIc/https/i.ibb.co/Wfr2txf/sem-t-tulo.gif?width=578&height=434)
