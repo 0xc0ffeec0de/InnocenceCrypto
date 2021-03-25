@@ -23,4 +23,4 @@
 
 ### Illustration
 
-![Gif](https://images-ext-2.discordapp.net/external/qwm8gNTVP5dZx8g9AuWeaiac-wHG0XDQ9i8rombODIc/https/i.ibb.co/Wfr2txf/sem-t-tulo.gif?width=578&height=434)
+![Gif](https://i.ibb.co/rFrkccm/sem-t-tulo.gif)
