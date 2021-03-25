@@ -63,8 +63,8 @@ int main(void){
                 case('&'): printf("%c", afbt[2]);break;  
               }
             }
-            char *c = crypt(pass, "da");
-            printf("\n:: CryptDES :: %s\n", c);
+            char *c = crypt(pass, "MO");
+            printf("\n\n:: CryptDES :: %s\n", c);
 
             printf(":: HexCryptDES :: ");
             for (int i=0; i < strlen(c); i++)
