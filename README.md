@@ -1,7 +1,9 @@
 # Crypt-DES-based
      
      DES-based password hash algorithm
-     The cryptocurrency is in progress made by mob and onion we are working to keep the code clean and doing       what should be its purpose
+     The cryptocurrency is in progress made by mob and onion 
+     we are working to keep the code clean and doing 
+     what should be its purpose
 
 ### Help
      
@@ -15,4 +17,6 @@
      CryptOM It is in maintenance!
 
 ###  Badges
-![Version](https://img.shields.io/badge/C-language-black)
+![Lang](https://img.shields.io/badge/C-language-black)
+![Version](https://img.shields.io/badge/version-2.1.2-blue)
+![Info](https://img.shields.io/badge/info-maintenance-red)
