@@ -1,3 +1,12 @@
+
+/*
+Coded by :: Mob in Onion
+Compile :: gcc -Wall main.c -o main -lcrypt
+
+execute :: ./main
+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -11,13 +20,6 @@
                 }\
         }
 
-/*
-Coded by :: Mob
-Compile :: gcc -Wall main.c -o main -lcrypt
-
-execute :: ./main
-
-*/
 
 int main(void){
 
