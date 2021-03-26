@@ -31,6 +31,7 @@ int main(void){
             scanf("\n%s", *&pass);
             
             printf("\n:: CryptOM ::"); 
+            printf("MO");
             for (int i=0; i < strlen(pass); i++) {
               switch(pass[i]){
                 case('a'): printf("%c", afbt[3]);break; 
