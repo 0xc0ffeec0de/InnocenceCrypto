@@ -36,7 +36,6 @@
 ### Badges
 ![Lang](https://img.shields.io/badge/C-language-black)
 ![Version](https://img.shields.io/badge/version-2.1.2-blue)
-![Info](https://img.shields.io/badge/info-maintenance-red)
 
 ### Illustration
 
