@@ -1,7 +1,7 @@
   /*
  *#CODED-UTF-8
  *#Coded by :: Mob and Onion \._./
- *#Compile :: gcc -Wall main.c -o main -lcrypt
+ *#Compile :: gcc -Wall main.c main -lcrypt
  *#run :: ./main
  */
 
@@ -30,9 +30,8 @@ int main(void){
             printf(":: Pass :: ");
             scanf("\n%s", *&pass);
             
-            printf("\n:: CryptOM ::"); 
-            printf("$MO");
-            crypton(pass);          
+            printf("\n:: Cryptom ::"); 
+            crypton(pass, "MO");          
 
             char *c = crypt(pass, "MO");
             printf("\n\n:: CryptDES :: %s\n", c);
