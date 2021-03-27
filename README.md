@@ -1,7 +1,7 @@
 # Crypt-DES-based
      
      DES-based password hash algorithm
-     The cryptocurrency is in progress made by mob and onion 
+     The crypton is in progress made by mob and onion 
      we are working to keep the code clean and doing 
      what should be its purpose
 
