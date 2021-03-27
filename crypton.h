@@ -2,12 +2,14 @@
 #include <string.h>
 #include <ctype.h>
 
-int crypton(char *pass){
+int crypton(char *pass, char *pr_bytes){
         char nums[10] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
         char afbt[36] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '.', '!', '@', '#', '$', '%', '&', '*', '<', '>'};
 
-
-        for (int i=0; i < strlen(pass); i++) {
+        for(int i=0;i < strlen(pr_bytes); i++)
+                printf("%c", pr_bytes[i]);
+        
+        for(int i=0;i < strlen(pass); i++) {
               switch(pass[i]){
                 case('a'): printf("%c%c", afbt[3], nums[0]);break;case('A'): printf("%c%c", afbt[4], nums[1]);break; 
                 case('b'): printf("%c", afbt[4]);break;case('B'): printf("%c", afbt[4]);break;
@@ -29,22 +31,22 @@ int crypton(char *pass){
                 case('r'): printf("%c", afbt[20]);break;case('R'): printf("%c", afbt[21]);break;
                 case('s'): printf("%c", afbt[21]);break;case('S'): printf("%c", afbt[22]);break;
                 case('t'): printf("%c", afbt[22]);break;case('T'): printf("%c", afbt[23]);break;
-                case('u'): printf("%c%c", afbt[23], nums[5]);break;case('U'): printf("%c%c", afbt[24], nums[6]);break;  
+                case('u'): printf("%c", afbt[23]);break;case('U'): printf("%c", afbt[24]);break;  
                 case('v'): printf("%c", afbt[24]);break;case('V'): printf("%c", afbt[25]);break;
-                case('w'): printf("%c%c", afbt[25], nums[6]);break;case('W'): printf("%c%c", afbt[26], nums[7]);break;  
+                case('w'): printf("%c", afbt[25]);break;case('W'): printf("%c", afbt[26]);break;  
                 case('x'): printf("%c", afbt[26]);break;case('X'): printf("%c", afbt[27]);break;
-                case('y'): printf("%c%c", afbt[27], nums[7]);break;case('Y'): printf("%c%c", afbt[28], nums[8]);break;
+                case('y'): printf("%c", afbt[27]);break;case('Y'): printf("%c", afbt[28]);break;
                 case('z'): printf("%c", afbt[28]);break;case('Z'): printf("%c", afbt[29]);break;
-                case('.'): printf("%c%c", afbt[29], nums[8]);break;
-                case('!'): printf("%c", afbt[30]);break;
-                case('@'): printf("%c%c", afbt[31], nums[9]);break;
-                case('#'): printf("%c", afbt[32]);break;
+                case('.'): printf("%c", afbt[29]);break;
+                case('!'): printf("%c%c", afbt[30], nums[5]);break;
+                case('@'): printf("%c", afbt[31]);break;
+                case('#'): printf("%c%c", afbt[32], nums[6]);break;
                 case('$'): printf("%c", afbt[33]);break;
-                case('%'): printf("%c", afbt[34]);break;
+                case('%'): printf("%c%c", afbt[34], nums[7]);break;
                 case('&'): printf("%c", afbt[35]);break;
-                case('*'): printf("%c", afbt[1]);break;
+                case('*'): printf("%c%c", afbt[1], nums[8]);break;
                 case('<'): printf("%c", afbt[2]);break;
-                case('>'): printf("%c", afbt[3]);break;
+                case('>'): printf("%c%c", afbt[3], nums[9]);break;
       
 
               }
@@ -64,7 +66,6 @@ int crypton(char *pass){
 
             }
         }
-
 
         return 0;
 }
