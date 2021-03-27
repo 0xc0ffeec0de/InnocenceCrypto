@@ -1,7 +1,7 @@
   /*
  *#CODED-UTF-8
  *#Coded by :: Mob and Onion \._./
- *#Compile :: gcc -Wall main.c main -lcrypt
+ *#Compile :: gcc -Wall main.c -o main -lcrypt
  *#run :: ./main
  */
 
