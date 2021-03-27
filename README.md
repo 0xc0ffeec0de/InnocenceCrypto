@@ -13,8 +13,25 @@
         ./main
         
 ### Info
+     Crypton ::
      
-     CryptOM Beta! 100% Original
+     CryptOM Beta Temporary!! 
+     Crypton is a crypt made entirely in C 
+     encrypting your password making it unviable to be broken 
+     easily we are adding new features 
+     to crypton to be able to leave the beta
+     
+     CryptDES ::
+     
+     CryptDES (Data Encryption Standard) 
+     is imported from lib unistd.h by encrypting 
+     your password and then 
+     switching to hex with HexCryptDES
+
+# Change Log
+-------------------------------------------------
+### Version 2.1.2
+     * We added new characters
 
 ### Badges
 ![Lang](https://img.shields.io/badge/C-language-black)
