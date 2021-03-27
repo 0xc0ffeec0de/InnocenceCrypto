@@ -5,14 +5,14 @@
      we are working to keep the code clean and doing 
      what should be its purpose
 
-### Help
+# Help
      
      Compile ::
         gcc -Wall main.c -o main -lcrypt
      Usage   ::
         ./main
         
-### Info
+# Info
      Crypton ::
      
      CryptOM Beta Temporary!! 
@@ -33,11 +33,11 @@
 ### Version 2.1.2
      * We added new characters
 -------------------------------------------------
-### Badges
+# Badges
 ![Lang](https://img.shields.io/badge/C-language-black)
 ![Version](https://img.shields.io/badge/version-2.1.2-blue)
 
-### Illustration
+# Illustration
 
 ![Gif](https://github.com/VitorMob/Crypt-DES-based/blob/main/inlustra%C3%A7ao.gif)
 
