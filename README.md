@@ -5,7 +5,7 @@
      we are working to keep the code clean and doing 
      what should be its purpose
 
-![gif](https://github.com/VitorMob/Crypt-DES-based/blob/main/mascote.gif)
+![gif](https://github.com/VitorMob/Crypt-DES-based/blob/main/mascotes.gif)
 
 
 # Help
