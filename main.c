@@ -14,9 +14,9 @@ int main(int argc, char *argv[]){
         char *pass = argv[1];
         if(argc >= 2){
                 printf("|   Cryptom   |   "); 
-                crypton(pass, "MO");printf("   |");          
+                crypton(pass, "MO");printf("   |\n");          
         }else
-                 printf("[!][Error not Argument]");
+                 printf("[!][Error not Argument]\n");
 
 return 0;
 
