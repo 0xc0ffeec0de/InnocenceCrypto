@@ -1,6 +1,3 @@
-  /*
- *#codification-UTF-8
- *#Coded by :: Mob and Onion \._./
  *#Compile :: make main.c main
  *#run :: ./main
  */
@@ -9,16 +6,21 @@
 #include <string.h>
 #include "crypton.h"
 
+void help(){
+
+        printf("\n    ---------    \n    | Help🐇 |    \n    ---------\n    | Usage | \n    ----------------\n    | ./main <input> |\n    ----------------");
+
+
+}
 
 int main(int argc, char *argv[]){
         char *pass = argv[1];
         if(argc >= 2){
-                printf("|   Cryptom   |   "); 
-                crypton(pass, "MO");printf("   |\n");          
+                printf("\n\n|   Cryptom   |   "); 
+                crypton(pass, "MO");printf("   |\n\n");          
         }else
-                 printf("[!][Error not Argument]\n");
 
+                help();
 return 0;
 
 }
-
