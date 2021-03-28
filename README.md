@@ -1,4 +1,4 @@
-# Crypt-DES-based
+# Rabbit-Hash
      
      DES-based password hash algorithm
      The crypton is in progress made by mob and onion 
@@ -24,24 +24,22 @@
      easily we are adding new features 
      to crypton to be able to leave the beta
      
-     CryptDES ::
-     
-     CryptDES (Data Encryption Standard) 
-     is imported from lib unistd.h by encrypting 
-     your password and then 
-     switching to hex with HexCryptDES
-
 # Change Log
+
+-------------------------------------------------
+### Version 2.2.6
+     * Dependent Code
+     * DES removed
 -------------------------------------------------
 ### Version 2.2.3
-     * code optimization
+     * Code optimization
 -------------------------------------------------
 ### Version 2.1.2
      * We added new characters
 -------------------------------------------------
 # Badges
 ![Lang](https://img.shields.io/badge/C-language-black)
-![Version](https://img.shields.io/badge/version-2.2.3-blue)
+![Version](https://img.shields.io/badge/version-2.2.6-blue)
 
 # Illustration
 
