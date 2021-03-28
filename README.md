@@ -33,12 +33,15 @@
 
 # Change Log
 -------------------------------------------------
+### Version 2.2.3
+     * code optimization
+-------------------------------------------------
 ### Version 2.1.2
      * We added new characters
 -------------------------------------------------
 # Badges
 ![Lang](https://img.shields.io/badge/C-language-black)
-![Version](https://img.shields.io/badge/version-2.1.2-blue)
+![Version](https://img.shields.io/badge/version-2.2.3-blue)
 
 # Illustration
 
