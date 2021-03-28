@@ -1,7 +1,7 @@
   /*
  *#codification-UTF-8
  *#Coded by :: Mob and Onion \._./
- *#Compile :: gcc -Wall main.c -o main -lcrypt
+ *#Compile :: make main.c main
  *#run :: ./main
  */
 #include <stdio.h>
