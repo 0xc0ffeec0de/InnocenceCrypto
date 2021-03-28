@@ -4,6 +4,7 @@
  *#Compile :: gcc -Wall main.c -o main -lcrypt
  *#run :: ./main
  */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
