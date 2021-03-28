@@ -11,14 +11,14 @@
 # Help
      
      Compile ::
-        gcc -Wall main.c -o main -lcrypt
+        make main.c main
      Usage   ::
-        ./main
+        ./main <input>
         
 # Info
      Crypton ::
      
-     CryptOM Beta Temporary!! 
+     CryptOM Beta Temporary!!
      Crypton is a crypt made entirely in C 
      encrypting your password making it unviable to be broken 
      easily we are adding new features 
