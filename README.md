@@ -13,16 +13,14 @@
      Compile ::
         make main.c main
      Usage   ::
-        ./main <input>
+        ./main <target>
         
 # Info🥕
-     Hash ::
-     
-     CryptOM Beta Temporary!!
-     Crypton is a crypt made entirely in C 
-     encrypting your password making it unviable to be broken 
-     easily we are adding new features 
-     to crypton to be able to leave the beta
+
+       Rabbit-Hash is a crypt made entirely in C
+       encrypt your password making it unviable to crack
+       we are easily adding new features
+       to improve password encryption 
      
 # Change Log🥕
 
@@ -37,10 +35,14 @@
 ### Version 2.1.2
      * We added new characters
 -------------------------------------------------
+
 # Badges🥕
 ![Lang](https://img.shields.io/badge/C-language-black)
 ![Version](https://img.shields.io/badge/version-2.2.6-blue)
 ![License](https://img.shields.io/badge/license-BSD-green)
+
+-------------------------------------------------
+
 # Illustration🥕
 
 ![Gif](https://github.com/VitorMob/Crypt-DES-based/blob/main/illustration.gif)
