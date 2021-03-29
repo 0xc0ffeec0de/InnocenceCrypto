@@ -45,5 +45,5 @@
 
 # Illustration🥕
 
-![Gif](https://github.com/VitorMob/Crypt-DES-based/blob/main/illustration.gif)
+![Gif](https://github.com/VitorMob/Crypt-DES-based/blob/main/illustration.png)
 
