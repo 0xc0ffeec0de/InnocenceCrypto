@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "crypton.h"
+#include "rabbit.h"
 
 void help(){
 
@@ -20,7 +20,7 @@ int main(int argc, char *argv[]){
         char *pass = argv[1];
         if(argc >= 2){
                 printf("\n\n|   Hash   |   "); 
-                crypton(pass, "RB");printf("   |\n\n");          
+                rabbit(pass, "RB");printf("   |\n\n");          
         }else
 
                 help();
