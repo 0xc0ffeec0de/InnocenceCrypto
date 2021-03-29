@@ -40,7 +40,7 @@
 # Badges🥕
 ![Lang](https://img.shields.io/badge/C-language-black)
 ![Version](https://img.shields.io/badge/version-2.2.6-blue)
-
+![License](https://img.shields.io/badge/license-BSD-green)
 # Illustration🥕
 
 ![Gif](https://github.com/VitorMob/Crypt-DES-based/blob/main/illustration.gif)
