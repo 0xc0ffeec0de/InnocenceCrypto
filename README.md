@@ -16,7 +16,7 @@
         ./main <input>
         
 # Info🥕
-     Crypton ::
+     Hash ::
      
      CryptOM Beta Temporary!!
      Crypton is a crypt made entirely in C 
