@@ -1,4 +1,4 @@
-# Rabbit-Hash
+# Rabbit-Hash🐇
      
      DES-based password hash algorithm
      The crypton is in progress made by mob and onion 
@@ -8,14 +8,14 @@
 ![gif](https://github.com/VitorMob/Crypt-DES-based/blob/main/mascotes.gif)
 
 
-# Help
+# Help🥕
      
      Compile ::
         make main.c main
      Usage   ::
         ./main <input>
         
-# Info
+# Info🥕
      Crypton ::
      
      CryptOM Beta Temporary!!
@@ -24,7 +24,7 @@
      easily we are adding new features 
      to crypton to be able to leave the beta
      
-# Change Log
+# Change Log🥕
 
 -------------------------------------------------
 ### Version 2.2.6
@@ -37,11 +37,11 @@
 ### Version 2.1.2
      * We added new characters
 -------------------------------------------------
-# Badges
+# Badges🥕
 ![Lang](https://img.shields.io/badge/C-language-black)
 ![Version](https://img.shields.io/badge/version-2.2.6-blue)
 
-# Illustration
+# Illustration🥕
 
 ![Gif](https://github.com/VitorMob/Crypt-DES-based/blob/main/illustration.gif)
 
