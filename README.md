@@ -45,6 +45,13 @@
 
 -------------------------------------------------
 
+# Dependencies
+     *Install requeriments to work
+     *Package installer 
+     
+     *pacman -S tk
+     *apt-get install python3-tk
+     
 # Illustration🥕
 
 ![Gif](https://github.com/VitorMob/Crypt-DES-based/blob/main/illustration.png)
