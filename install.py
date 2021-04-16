@@ -14,6 +14,7 @@ def __install__():
     #os.system("rm ./libs/requirements.txt")
     if os.system("ls ./bin/main") == 0:
         os.system("chmod 755 ./bin/main")
+        os.system("chmod 755 rabbit.py")
         print("\nArchive_Compiled")
     else:
         print("\nError_Unexpected")
