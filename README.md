@@ -54,5 +54,5 @@
      
 # Illustration🥕
 
-![Gif](https://github.com/VitorMob/Crypt-DES-based/blob/main/illustration.png)
+![Gif](https://raw.githubusercontent.com/VitorMob/Rabbit-Hash/main/assets/illustration.png)
 
