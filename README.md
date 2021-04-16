@@ -45,7 +45,7 @@
 
 -------------------------------------------------
 
-# Dependencies
+# Dependencies🥕
      *Install requeriments to work
      *Package installer 
      
