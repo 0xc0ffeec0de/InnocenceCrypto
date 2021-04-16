@@ -13,6 +13,7 @@ def __install__():
     time.sleep(2)
     #os.system("rm ./libs/requirements.txt")
     if os.system("ls ./bin/main") == 0:
+        os.system("chmod 755 ./bin/main")
         print("\nArchive_Compiled")
     else:
         print("\nError_Unexpected")
