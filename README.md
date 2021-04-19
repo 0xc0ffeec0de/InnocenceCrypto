@@ -10,10 +10,9 @@
 
 # Help🥕
      
-     Compile ::
-        make main.c main
-     Usage   ::
-        ./main <target>
+     to install just go to the terminal and run ./install.py or 
+     go to the folder and press run ./install.py 
+ 
         
 # Info🥕
 
