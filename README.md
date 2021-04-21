@@ -22,6 +22,12 @@
        to improve password encryption 
      
 # Change Log🥕
+## Version 2.3.5
+     * Version GUI Update
+     * Code optimization
+     * Decode implemented 
+     * Archives encode in manutencion
+-------------------------------------------------
 ## Version 2.3.0
      * Version GUI
      * Code optimization
@@ -39,7 +45,7 @@
 
 # Badges🥕
 ![Lang](https://img.shields.io/badge/C-language-black)
-![Version](https://img.shields.io/badge/version-2.3.0-blue)
+![Version](https://img.shields.io/badge/version-2.3.5-blue)
 ![License](https://img.shields.io/badge/license-BSD-green)
 
 -------------------------------------------------
