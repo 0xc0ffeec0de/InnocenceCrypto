@@ -59,5 +59,5 @@
      
 # Illustration🥕
 
-![Gif](https://raw.githubusercontent.com/VitorMob/Rabbit-Hash/main/assets/ilustration.png)
+![Gif](https://github.com/VitorMob/Rabbit-Hash/blob/main/assets/rabbit-ilustration.png)
 
