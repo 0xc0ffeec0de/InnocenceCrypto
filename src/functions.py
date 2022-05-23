@@ -10,7 +10,8 @@ def generatedictionary():
     return dictionary
 
 def encrypt(dictionary, string):
-    
+    if len(string) <= 3:
+        return 1
     wordlist = [] #guarda a lista de palavras
     newstring = string.split(sep = '\n') #divide a string por quebra de linha
     #separa as palavras por espaços adicionando quebra de linha no fim a cada quebra de linha
@@ -24,7 +25,7 @@ def encrypt(dictionary, string):
             else:
                 wordlist.append(word)
             wordlist.append('\n')        
-    encrypted = '' #variavel para guardar a string criptografada
+    encrypted = 'IC' #variavel para guardar a string criptografada
 
     for word in wordlist:
         for letter in word:
@@ -43,10 +44,12 @@ def encrypt(dictionary, string):
     return encrypted
 
 def decrypt(dictionary, string):
+
+    if string[0:2] != 'IC':
+        return 1
     
     wordlist = [] #guarda a lista de palavras
-    newstring = string.split(sep = ' ') #divide a string por espaços em uma lista
-    newstring = string.split(sep = '\n') #divide a string por quebra de linha
+    newstring = string[2:-1].split(sep = '\n') #divide a string por quebra de linha
     #separa as palavras por espaços adicionando quebra de linha no fim a cada quebra de linha
     for word in newstring:
         if word == '':
