@@ -9,7 +9,7 @@ dictionary = functions.generatedictionary()
 def encrypto():
     global text, dictionary, entrystep
     texto = text.get(1.0, 'end')
-    step = eval(entrystep.get())
+    step = abs(eval(entrystep.get()))
     encrypted = functions.encrypt(dictionary, texto, step)
     if encrypted == 1:
         showinfo(message='Menssagem muito curta')
@@ -21,7 +21,7 @@ def encrypto():
 def decrypto():
     global text, dictionary, entrystep
     texto = text.get(1.0, 'end')
-    step = eval(entrystep.get())
+    step = abs(eval(entrystep.get()))
     decrypted = functions.decrypt(dictionary, texto, step)
     if decrypted == 1:
         showinfo(message='Menssagem não criptografada com o InnocenceCrypto')
