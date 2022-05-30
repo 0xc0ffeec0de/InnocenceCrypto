@@ -9,7 +9,7 @@ def generatedictionary():
 
     return dictionary
 
-def encrypt(dictionary, string):
+def encrypt(dictionary, string, step):
     if len(string) <= 3:
         return 1
     wordlist = [] #guarda a lista de palavras
@@ -34,16 +34,22 @@ def encrypt(dictionary, string):
                 encrypted += word
             else:
                 #se chegar no fim da lista ir para o começo
-                if ord(letter) + 4 > 126:
-                    encrypted += dictionary[((ord(letter)+4)-94)]
+                if step//94 >= 1:
+                    if ord(letter) + ((step//94) + step - 94) > 126:
+                        encrypted += dictionary[((ord(letter)+ ((step//94) + step - 94))-94)]
+                    else:
+                        encrypted += dictionary[ord(letter)+((step//94) + step - 94)]
                 else:
-                    encrypted += dictionary[ord(letter)+4]
+                    if ord(letter) + step > 126:
+                        encrypted += dictionary[((ord(letter)+ step)-94)]
+                    else:
+                        encrypted += dictionary[ord(letter)+step]
         if word != wordlist[-1]:
             encrypted += ' '
 
     return encrypted
 
-def decrypt(dictionary, string):
+def decrypt(dictionary, string, step):
 
     if string[0:2] != 'IC':
         return 1
@@ -70,10 +76,16 @@ def decrypt(dictionary, string):
                 decrypted += word
             else:
                 #se chegar no começo da lista ir para o fim
-                if ord(letter) - 4 < 33:
-                    decrypted += dictionary[((ord(letter) - 4)+94)]
+                if step//94 >= 1:
+                    if ord(letter) - ((step//94) + step - 94) < 33:
+                        decrypted += dictionary[((ord(letter)- ((step//94) + step - 94))+94)]
+                    else:
+                        decrypted += dictionary[ord(letter)-((step//94) + step - 94)]
                 else:
-                    decrypted += dictionary[ord(letter)-4]
+                    if ord(letter) - step < 33:
+                        decrypted += dictionary[((ord(letter) - step)+94)]
+                    else:
+                        decrypted += dictionary[ord(letter)- step]
         if word != wordlist[-1]:
             decrypted += ' '
 

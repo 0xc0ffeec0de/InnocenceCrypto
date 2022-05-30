@@ -7,9 +7,10 @@ import functions
 dictionary = functions.generatedictionary()
 
 def encrypto():
-    global text, dictionary
+    global text, dictionary, entrystep
     texto = text.get(1.0, 'end')
-    encrypted = functions.encrypt(dictionary, texto)
+    step = eval(entrystep.get())
+    encrypted = functions.encrypt(dictionary, texto, step)
     if encrypted == 1:
         showinfo(message='Menssagem muito curta')
     else:
@@ -18,9 +19,10 @@ def encrypto():
     
 
 def decrypto():
-    global text, dictionary
+    global text, dictionary, entrystep
     texto = text.get(1.0, 'end')
-    decrypted = functions.decrypt(dictionary, texto)
+    step = eval(entrystep.get())
+    decrypted = functions.decrypt(dictionary, texto, step)
     if decrypted == 1:
         showinfo(message='Menssagem não criptografada com o InnocenceCrypto')
     else:
@@ -80,15 +82,23 @@ buttonsavetofile.grid(row = 0, column = 2)
 text = scrolledtext.ScrolledText(root)
 text.grid(row=1, column = 0, columnspan = 3, rowspan = 3)
 
+#Make the step selection
+entrylabel = Label(root, text='Step------>')
+entrylabel.grid(row = 4, column = 0)
+
+entrystep = Entry(root)
+entrystep.grid(row = 4, column = 1)
+entrystep.insert(0, 4)
+
 #Make the 3 buttons
 buttonencrypt = Button(root, text = 'Encrypt', command = encrypto)
-buttonencrypt.grid(row = 4, column = 0)
+buttonencrypt.grid(row = 5, column = 0)
 
 buttondecrypt = Button(root, text = 'decrypt', command = decrypto)
-buttondecrypt.grid(row = 4, column = 1)
+buttondecrypt.grid(row = 5, column = 1)
 
 buttonquit = Button(root, text = 'Exit', command = root.destroy)
-buttonquit.grid(row = 4, column = 2)
+buttonquit.grid(row = 5, column = 2)
 
 #set the icon
 img = PhotoImage(file='icon.gif')
