@@ -35,10 +35,10 @@ def encrypt(dictionary, string, step):
             else:
                 #se chegar no fim da lista ir para o começo
                 if step//94 >= 1:
-                    if ord(letter) + ((step//94) + step - 94) > 126:
-                        encrypted += dictionary[((ord(letter)+ ((step//94) + step - 94))-94)]
+                    if ord(letter) + (step%94) > 126:
+                        encrypted += dictionary[((ord(letter))+ (step%94)-94)]
                     else:
-                        encrypted += dictionary[ord(letter)+((step//94) + step - 94)]
+                        encrypted += dictionary[ord(letter)+((step%94))]
                 else:
                     if ord(letter) + step > 126:
                         encrypted += dictionary[((ord(letter)+ step)-94)]
@@ -77,10 +77,10 @@ def decrypt(dictionary, string, step):
             else:
                 #se chegar no começo da lista ir para o fim
                 if step//94 >= 1:
-                    if ord(letter) - ((step//94) + step - 94) < 33:
-                        decrypted += dictionary[((ord(letter)- ((step//94) + step - 94))+94)]
+                    if ord(letter) - (step%94) < 33:
+                        decrypted += dictionary[((ord(letter)) - (step%94) + 94)]
                     else:
-                        decrypted += dictionary[ord(letter)-((step//94) + step - 94)]
+                        decrypted += dictionary[ord(letter)-(step%94)]
                 else:
                     if ord(letter) - step < 33:
                         decrypted += dictionary[((ord(letter) - step)+94)]
