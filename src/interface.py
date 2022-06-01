@@ -7,9 +7,9 @@ import functions
 dictionary = functions.generatedictionary()
 
 def encrypto():
-    global text, dictionary, entrystep
+    global text, dictionary, radiobuttonvar
     texto = text.get(1.0, 'end')
-    step = abs(eval(entrystep.get()))
+    step = radiobuttonvar.get()
     encrypted = functions.encrypt(dictionary, texto, step)
     if encrypted == 1:
         showinfo(message='Menssagem muito curta')
@@ -19,9 +19,9 @@ def encrypto():
     
 
 def decrypto():
-    global text, dictionary, entrystep
+    global text, dictionary, radiobuttonvar
     texto = text.get(1.0, 'end')
-    step = abs(eval(entrystep.get()))
+    step = radiobuttonvar.get()
     decrypted = functions.decrypt(dictionary, texto, step)
     if decrypted == 1:
         showinfo(message='Menssagem não criptografada com o InnocenceCrypto')
@@ -30,13 +30,14 @@ def decrypto():
         text.insert(1.0, decrypted)
     
 def encryptfile():
-    global text, dictionary    
+    global text, dictionary, radiobuttonvar
+    step = radiobuttonvar.get()
     filetypes = (('text files', '*.txt'), ('All files', '*.*'))
     filename = filedialog.askopenfilename(title = 'Open a file', initialdir='/', filetypes = filetypes)
     file = open(filename, 'r')
     content = file.read()
     file.close()
-    decrypted = functions.encrypt(dictionary, content)
+    decrypted = functions.encrypt(dictionary, content, step)
     if decrypted == 1:
         showinfo(message='Menssagem muito curta')
     else:
@@ -44,13 +45,14 @@ def encryptfile():
         text.insert(1.0, decrypted)
     
 def decryptfile():
-    global text, dictionary    
+    global text, dictionary, radiobuttonvar
+    step = radiobuttonvar.get()
     filetypes = (('text files', '*.txt'), ('All files', '*.*'))
     filename = filedialog.askopenfilename(title = 'Open a file', initialdir='/', filetypes = filetypes)
     file = open(filename, 'r')
     content = file.read()
     file.close()
-    decrypted = functions.decrypt(dictionary, content)
+    decrypted = functions.decrypt(dictionary, content, step)
     if decrypted == 1:
         showinfo(message='Menssagem não criptografada com o InnocenceCrypto')
     else:
@@ -67,6 +69,9 @@ def savetofile():
     file.close()
 
 root = Tk() #Main Widged
+root.title('InnocenceCrypto')
+
+radiobuttonvar = IntVar()#Declare the radiobuttons variable
 
 #Make the button to encrypt, a button to decrypt a file and a button to save to file
 buttonencryptfile = Button(root, text = 'Encrypt a file', command = encryptfile)
@@ -83,26 +88,33 @@ text = scrolledtext.ScrolledText(root)
 text.grid(row=1, column = 0, columnspan = 3, rowspan = 3)
 
 #Make the step selection
-entrylabel = Label(root, text='Step------>')
-entrylabel.grid(row = 4, column = 0)
+labelstep = Label(root, text = 'Step:')
+labelstep.grid(row = 4, column = 1)
 
-entrystep = Entry(root)
-entrystep.grid(row = 4, column = 1)
-entrystep.insert(0, 4)
+frameradio = Frame(root)
+frameradio.grid(row = 5, column = 0, columnspan = 3, rowspan = 3)
+
+step = 4
+for i in range(3):
+    if step > 8:
+        break
+    for a in range(3):
+        if step > 8:
+            break
+        radio = Radiobutton(frameradio, text = step,value = step, variable = radiobuttonvar)
+        radio.grid(row = i, column = a)
+        radio.select()
+        step += 1
 
 #Make the 3 buttons
 buttonencrypt = Button(root, text = 'Encrypt', command = encrypto)
-buttonencrypt.grid(row = 5, column = 0)
+buttonencrypt.grid(row = 8, column = 0)
 
 buttondecrypt = Button(root, text = 'decrypt', command = decrypto)
-buttondecrypt.grid(row = 5, column = 1)
+buttondecrypt.grid(row = 8, column = 1)
 
 buttonquit = Button(root, text = 'Exit', command = root.destroy)
-buttonquit.grid(row = 5, column = 2)
-
-#set the icon
-img = PhotoImage(file='icon.gif')
-root.tk.call('wm', 'iconphoto', root._w, img)
+buttonquit.grid(row = 8, column = 2)
 
 #Run the window
 root.mainloop()
