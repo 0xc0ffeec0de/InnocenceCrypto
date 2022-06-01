@@ -37,12 +37,15 @@ def encryptfile():
     file = open(filename, 'r')
     content = file.read()
     file.close()
-    decrypted = functions.encrypt(dictionary, content, step)
-    if decrypted == 1:
+    encrypted = functions.encrypt(dictionary, content, step)
+    file = open(filename, 'w')
+    file.write(encrypted)
+    file.close()
+    if encrypted == 1:
         showinfo(message='Menssagem muito curta')
     else:
         text.delete(1.0, 'end')
-        text.insert(1.0, decrypted)
+        text.insert(1.0, encrypted)
     
 def decryptfile():
     global text, dictionary, radiobuttonvar
@@ -53,6 +56,9 @@ def decryptfile():
     content = file.read()
     file.close()
     decrypted = functions.decrypt(dictionary, content, step)
+    file = open(filename, 'w')
+    file.write(decrypted)
+    file.close()
     if decrypted == 1:
         showinfo(message='Menssagem não criptografada com o InnocenceCrypto')
     else:
@@ -110,7 +116,7 @@ for i in range(3):
 buttonencrypt = Button(root, text = 'Encrypt', command = encrypto)
 buttonencrypt.grid(row = 8, column = 0)
 
-buttondecrypt = Button(root, text = 'decrypt', command = decrypto)
+buttondecrypt = Button(root, text = 'Decrypt', command = decrypto)
 buttondecrypt.grid(row = 8, column = 1)
 
 buttonquit = Button(root, text = 'Exit', command = root.destroy)
