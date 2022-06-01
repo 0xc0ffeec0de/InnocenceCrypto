@@ -4,9 +4,9 @@
 
 Requires Tk
 
-#### Use pip to install Tk:
+#### Use pip to install the requeriments:
 
-    pip install tk
+    pip3 install -r requeriments.txt
 
 #### Finally run the program:
 
