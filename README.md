@@ -45,3 +45,7 @@ For the program, just run the following command start in the terminal
   > 'Save to file...' button:
 
    * Saves the content of the textbox to a .txt file
+
+## Screen
+
+![ic-](assets/ic-software.png)
