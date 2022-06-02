@@ -1,48 +1,47 @@
-# InnocenceCrypto: The crypto of the naive hacker
+# InnocenceCrypto (The crypto of the naive hacker)
+
+![icon](assets/ic.png)
 
 ### How to Run
 
 Requires Tk
 
-#### Use pip to install the requeriments:
+## Dependencies Install:
 
     pip3 install -r requeriments.txt
 
-#### Finally run the program:
+##  Help
 
-Type in the terminal:
-    
+For the program, just run the following command start in the terminal
+
+```console
     ./run.sh
+```
 
-### How to use:
+### How to use
 
-#### Step menu:
+ > Step menu
 
-Changes the crypto power.
-
-#### Encrypt button:
+   * Changes the crypto power.
+ 
+ > Encrypt button:
     
-Encrypts the text in the textbox.
+   * Encrypts the text in the textbox.
 
-#### Decrypt button:
+ > Decrypt button:
 
-Decrypts the text in the textbox if it is encrypted with this program.
-(if it was encrypted with the same crypto power).
+   * Decrypts the text in the textbox if it is encrypted with this program.
+     (if it was encrypted with the same crypto power).
 
-#### 'Encrypt a file' button:
+  > 'Encrypt a file' button:
 
-Encrypts a .txt file.
+   * Encrypts a .txt file.
 
-#### 'Decrypt a file' button:
+  > 'Decrypt a file' button:
 
-Decrypts a .txt file if it is encrypted by the program.
-(if it was encrypted with the same crypto power).
+   * Decrypts a .txt file if it is encrypted by the program.
+    (if it was encrypted with the same crypto power).
 
-#### 'Save to file...' button:
+  > 'Save to file...' button:
 
-Saves the content of the textbox to a .txt file
-
-#### Exit button:
-
-Exits
-
+   * Saves the content of the textbox to a .txt file
