@@ -38,12 +38,12 @@ def encryptfile():
     content = file.read()
     file.close()
     encrypted = functions.encrypt(dictionary, content, step)
-    file = open(filename, 'w')
-    file.write(encrypted)
-    file.close()
     if encrypted == 1:
         showinfo(message='Menssagem muito curta')
     else:
+        file = open(filename, 'w')
+        file.write(encrypted)
+        file.close()
         text.delete(1.0, 'end')
         text.insert(1.0, encrypted)
     
@@ -56,12 +56,12 @@ def decryptfile():
     content = file.read()
     file.close()
     decrypted = functions.decrypt(dictionary, content, step)
-    file = open(filename, 'w')
-    file.write(decrypted)
-    file.close()
     if decrypted == 1:
         showinfo(message='Menssagem não criptografada com o InnocenceCrypto')
     else:
+        file = open(filename, 'w')
+        file.write(decrypted)
+        file.close()
         text.delete(1.0, 'end')
         text.insert(1.0, decrypted)
 
@@ -75,7 +75,10 @@ def savetofile():
     file.close()
 
 root = Tk() #Main Widged
-root.title('InnocenceCrypto')
+root.title('InnocenceCrypto')#Main windows title
+root.geometry("670x550")#Adjust main window size
+root.minsize(670, 550)# set minimum window size value
+root.maxsize(670, 550)# set maximum window size value
 
 radiobuttonvar = IntVar()#Declare the radiobuttons variable
 
@@ -121,6 +124,11 @@ buttondecrypt.grid(row = 8, column = 1)
 
 buttonquit = Button(root, text = 'Exit', command = root.destroy)
 buttonquit.grid(row = 8, column = 2)
+
+#The icon
+image = PhotoImage(file='../assets/icicon.gif')
+root.iconphoto(False, image)
+
 
 #Run the window
 root.mainloop()
