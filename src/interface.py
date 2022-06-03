@@ -75,8 +75,8 @@ def savetofile():
     file.close()
 
 root = Tk() #Main Widged
-root.title('InnocenceCrypto')#Main windows title
-root.geometry("670x550")#Adjust main window size
+root.title('InnocenceCrypto')#Main window title
+root.geometry("670x550")# Adjust size
 root.minsize(670, 550)# set minimum window size value
 root.maxsize(670, 550)# set maximum window size value
 
@@ -128,7 +128,6 @@ buttonquit.grid(row = 8, column = 2)
 #The icon
 image = PhotoImage(file='../assets/icicon.gif')
 root.iconphoto(False, image)
-
 
 #Run the window
 root.mainloop()
