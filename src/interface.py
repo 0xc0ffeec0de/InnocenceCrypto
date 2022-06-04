@@ -4,6 +4,7 @@ from tkinter.messagebox import showinfo
 import tkinter.scrolledtext as scrolledtext
 import functions
 
+
 dictionary = functions.generatedictionary()
 
 def encrypto():
@@ -131,7 +132,7 @@ buttonquit = Button(root, text = 'Exit', command = root.destroy)
 buttonquit.grid(row = 8, column = 2)
 
 #The icon
-image = PhotoImage(file='../assets/icicon.gif')
+image = PhotoImage(file = './assets/icicon.gif')
 root.iconphoto(False, image)
 
 #Run the window
