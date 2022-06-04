@@ -9,6 +9,7 @@ dictionary = functions.generatedictionary()
 def encrypto():
     global text, dictionary, radiobuttonvar
     texto = text.get(1.0, 'end')
+    texto = texto.rstrip()
     step = radiobuttonvar.get()
     encrypted = functions.encrypt(dictionary, texto, step)
     if encrypted == 1:
@@ -21,6 +22,7 @@ def encrypto():
 def decrypto():
     global text, dictionary, radiobuttonvar
     texto = text.get(1.0, 'end')
+    texto = texto.rstrip()
     step = radiobuttonvar.get()
     decrypted = functions.decrypt(dictionary, texto, step)
     if decrypted == 1:
@@ -37,6 +39,7 @@ def encryptfile():
     file = open(filename, 'r')
     content = file.read()
     file.close()
+    content = content.rstrip()
     encrypted = functions.encrypt(dictionary, content, step)
     if encrypted == 1:
         showinfo(message='Menssagem muito curta')
@@ -55,6 +58,7 @@ def decryptfile():
     file = open(filename, 'r')
     content = file.read()
     file.close()
+    content = content.rstrip()
     decrypted = functions.decrypt(dictionary, content, step)
     if decrypted == 1:
         showinfo(message='Menssagem não criptografada com o InnocenceCrypto')
@@ -70,6 +74,7 @@ def savetofile():
     filetypes = (('text files', '*.txt'), ('All files', '*.*'))
     filename = filedialog.asksaveasfilename(title = 'Open a file', initialdir='/', filetypes = filetypes)
     texto = text.get(1.0, 'end')
+    texto = texto.rstrip()
     file = open(filename, 'w')
     file.write(texto)
     file.close()
