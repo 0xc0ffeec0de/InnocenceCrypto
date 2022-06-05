@@ -45,9 +45,6 @@ def encryptfile():
     if encrypted == 1:
         showinfo(message='Menssagem muito curta')
     else:
-        file = open(filename, 'w')
-        file.write(encrypted)
-        file.close()
         text.delete(1.0, 'end')
         text.insert(1.0, encrypted)
     
@@ -64,9 +61,6 @@ def decryptfile():
     if decrypted == 1:
         showinfo(message='Menssagem não criptografada com o InnocenceCrypto')
     else:
-        file = open(filename, 'w')
-        file.write(decrypted)
-        file.close()
         text.delete(1.0, 'end')
         text.insert(1.0, decrypted)
 
@@ -82,35 +76,38 @@ def savetofile():
 
 root = Tk() #Main Widged
 root.title('InnocenceCrypto')#Main window title
-root.geometry("670x550")# Adjust size
-root.minsize(670, 550)# set minimum window size value
-root.maxsize(670, 550)# set maximum window size value
+root.geometry("500x550")# Adjust size
+root.minsize(500, 550)# set minimum window size value
+root.maxsize(500, 550)# set maximum window size value
 
 radiobuttonvar = IntVar()#Declare the radiobuttons variable
 
+frametop = Frame(root)#Make a frame for the top buttons
+frametop.pack(side = TOP)
+
 #Make the button to encrypt, a button to decrypt a file and a button to save to file
-buttonencryptfile = Button(root, text = 'Encrypt a file', command = encryptfile)
+buttonencryptfile = Button(frametop, text = 'Encrypt a file', command = encryptfile)
 buttonencryptfile.grid(row = 0, column = 0)
 
-buttondecryptfile = Button(root, text = 'Decrypt a file', command = decryptfile)
+buttondecryptfile = Button(frametop, text = 'Decrypt a file', command = decryptfile)
 buttondecryptfile.grid(row = 0, column = 1)
 
-buttonsavetofile = Button(root, text = 'Save to file...', command = savetofile)
+buttonsavetofile = Button(frametop, text = 'Save to file...', command = savetofile)
 buttonsavetofile.grid(row = 0, column = 2)
 
 #Make textbox with a scrollbar and postion on the main widget
 text = scrolledtext.ScrolledText(root)
-text.grid(row=1, column = 0, columnspan = 3, rowspan = 3)
+text.pack()
 
 #Make the step selection
-labelstep = Label(root, text = 'Step:')
-labelstep.grid(row = 4, column = 1)
-
 frameradio = Frame(root)
-frameradio.grid(row = 5, column = 0, columnspan = 3, rowspan = 3)
+frameradio.pack()
+
+labelstep = Label(frameradio, text = 'Step:')
+labelstep.grid(row = 0, column = 1)
 
 step = 4
-for i in range(3):
+for i in range(1, 3):
     if step > 8:
         break
     for a in range(3):
@@ -122,14 +119,17 @@ for i in range(3):
         step += 1
 
 #Make the 3 buttons
-buttonencrypt = Button(root, text = 'Encrypt', command = encrypto)
-buttonencrypt.grid(row = 8, column = 0)
+framedown = Frame(root)
+framedown.pack(side = BOTTOM)
+               
+buttonencrypt = Button(framedown, text = 'Encrypt', command = encrypto)
+buttonencrypt.grid(row = 0, column = 0)
 
-buttondecrypt = Button(root, text = 'Decrypt', command = decrypto)
-buttondecrypt.grid(row = 8, column = 1)
+buttondecrypt = Button(framedown, text = 'Decrypt', command = decrypto)
+buttondecrypt.grid(row = 0, column = 1)
 
-buttonquit = Button(root, text = 'Exit', command = root.destroy)
-buttonquit.grid(row = 8, column = 2)
+buttonquit = Button(framedown, text = 'Exit', command = root.destroy)
+buttonquit.grid(row = 0, column = 2)
 
 #The icon
 image = PhotoImage(file = './assets/icicon.gif')
