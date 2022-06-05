@@ -17,7 +17,7 @@ def encrypt(dictionary, string, step):
     #separa as palavras por espaços adicionando quebra de linha no fim a cada quebra de linha
     for word in newstring:
         if word == '':
-            break
+            wordlist.append('\n')
         else:
             if ' ' in word:
                 for palavra in word.split(' '):
@@ -53,7 +53,7 @@ def decrypt(dictionary, string, step):
     #separa as palavras por espaços adicionando quebra de linha no fim a cada quebra de linha
     for word in newstring:
         if word == '':
-            break
+            wordlist.append('\n')
         else:
             if ' ' in word:
                 for palavra in word.split(' '):
