@@ -8,14 +8,26 @@ Requires Tk
 
 ## Dependencies Install:
 
-    pip3 install -r requeriments.txt
+    pip3 install -r requirements.txt
 
 ##  Help
 
 For the program, just run the following command start in the terminal
 
 ```console
-    ./run.sh
+    python innocence-crypto.py
+```
+
+Or make the file executable with the following command
+
+```console
+    chmod +x innocence-crypto.py
+```
+
+Execute with
+  
+```console
+    ./innocence-crypto.py
 ```
 
 ### How to use
