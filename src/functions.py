@@ -9,7 +9,7 @@ def generatedictionary():
 
     return dictionary
 
-def encrypt(dictionary, string, step):
+def encrypt(dictionary: dict, string: str, step: int):
     if len(string) <= 3:
         return 1
     wordlist = [] #guarda a lista de palavras
@@ -43,7 +43,7 @@ def encrypt(dictionary, string, step):
 
     return encrypted
 
-def decrypt(dictionary, string, step):
+def decrypt(dictionary: dict, string: str, step: int):
 
     if string[0:2] != 'IC':
         return 1
