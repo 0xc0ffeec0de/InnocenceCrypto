@@ -2,17 +2,17 @@ from tkinter import *
 from tkinter import filedialog
 from tkinter.messagebox import showinfo
 import tkinter.scrolledtext as scrolledtext
-import functions
+from functions import CryptFunctions
 
 
-dictionary = functions.generatedictionary()
+crypt_funcs = CryptFunctions()
 
 def encrypto():
     global text, dictionary, radiobuttonvar
     texto = text.get(1.0, 'end')
     texto = texto.rstrip()
     step = radiobuttonvar.get()
-    encrypted = functions.encrypt(dictionary, texto, step)
+    encrypted = crypt_funcs.encrypt(texto, step)
     if encrypted == 1:
         showinfo(message='Mensagem muito curta')
     else:
@@ -25,7 +25,7 @@ def decrypto():
     texto = text.get(1.0, 'end')
     texto = texto.rstrip()
     step = radiobuttonvar.get()
-    decrypted = functions.decrypt(dictionary, texto, step)
+    decrypted = crypt_funcs.decrypt(texto, step)
     if decrypted == 1:
         showinfo(message='Mensagem não criptografada com o InnocenceCrypto')
     else:
@@ -33,7 +33,7 @@ def decrypto():
         text.insert(1.0, decrypted)
     
 def encryptfile():
-    global text, dictionary, radiobuttonvar
+    global text, radiobuttonvar
     step = radiobuttonvar.get()
     filetypes = (('text files', '*.txt'), ('All files', '*.*'))
     filename = filedialog.askopenfilename(title = 'Open a file', initialdir='/', filetypes = filetypes)
@@ -41,7 +41,7 @@ def encryptfile():
     content = file.read()
     file.close()
     content = content.rstrip()
-    encrypted = functions.encrypt(dictionary, content, step)
+    encrypted = crypt_funcs.encrypt(content, step)
     if encrypted == 1:
         showinfo(message='Mensagem muito curta')
     else:
@@ -49,7 +49,7 @@ def encryptfile():
         text.insert(1.0, encrypted)
     
 def decryptfile():
-    global text, dictionary, radiobuttonvar
+    global text, radiobuttonvar
     step = radiobuttonvar.get()
     filetypes = (('text files', '*.txt'), ('All files', '*.*'))
     filename = filedialog.askopenfilename(title = 'Open a file', initialdir='/', filetypes = filetypes)
@@ -57,7 +57,7 @@ def decryptfile():
     content = file.read()
     file.close()
     content = content.rstrip()
-    decrypted = functions.decrypt(dictionary, content, step)
+    decrypted = crypt_funcs.decrypt(content, step)
     if decrypted == 1:
         showinfo(message='Mensagem não criptografada com o InnocenceCrypto')
     else:
