@@ -14,7 +14,7 @@ def encrypto():
     step = radiobuttonvar.get()
     encrypted = functions.encrypt(dictionary, texto, step)
     if encrypted == 1:
-        showinfo(message='Menssagem muito curta')
+        showinfo(message='Mensagem muito curta')
     else:
         text.delete(1.0, 'end')
         text.insert(1.0, encrypted)
@@ -27,7 +27,7 @@ def decrypto():
     step = radiobuttonvar.get()
     decrypted = functions.decrypt(dictionary, texto, step)
     if decrypted == 1:
-        showinfo(message='Menssagem não criptografada com o InnocenceCrypto')
+        showinfo(message='Mensagem não criptografada com o InnocenceCrypto')
     else:
         text.delete(1.0, 'end')
         text.insert(1.0, decrypted)
@@ -43,7 +43,7 @@ def encryptfile():
     content = content.rstrip()
     encrypted = functions.encrypt(dictionary, content, step)
     if encrypted == 1:
-        showinfo(message='Menssagem muito curta')
+        showinfo(message='Mensagem muito curta')
     else:
         text.delete(1.0, 'end')
         text.insert(1.0, encrypted)
@@ -59,7 +59,7 @@ def decryptfile():
     content = content.rstrip()
     decrypted = functions.decrypt(dictionary, content, step)
     if decrypted == 1:
-        showinfo(message='Menssagem não criptografada com o InnocenceCrypto')
+        showinfo(message='Mensagem não criptografada com o InnocenceCrypto')
     else:
         text.delete(1.0, 'end')
         text.insert(1.0, decrypted)
