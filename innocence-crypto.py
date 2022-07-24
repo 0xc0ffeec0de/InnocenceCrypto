@@ -1,4 +1,6 @@
+#!/usr/bin/env python
 from src.interface import InterfaceIC
 
-interface = InterfaceIC()
-interface.run()
+if __name__ == "__main__":
+    interface = InterfaceIC()
+    interface.run()
