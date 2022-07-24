@@ -2,138 +2,154 @@ from tkinter import *
 from tkinter import filedialog
 from tkinter.messagebox import showinfo
 import tkinter.scrolledtext as scrolledtext
-from functions import CryptFunctions
+from src.cryptfunctions import CryptFunctions
 
 
-crypt_funcs = CryptFunctions()
-
-def encrypto():
-    global text, dictionary, radiobuttonvar
-    texto = text.get(1.0, 'end')
-    texto = texto.rstrip()
-    step = radiobuttonvar.get()
-    encrypted = crypt_funcs.encrypt(texto, step)
-    if encrypted == 1:
-        showinfo(message='Mensagem muito curta')
-    else:
-        text.delete(1.0, 'end')
-        text.insert(1.0, encrypted)
+class InterfaceIC:
+    crypt_funcs = CryptFunctions()
     
+    def __init__(self):
+        """
+        Classe da interface do programa.
+        """
+        self.window = Tk()
+        self.radiobuttonvar = IntVar()
+        
+    def encrypto(self):
+        new_text = self.text.get(1.0, 'end')
+        new_text = new_text.rstrip()
+        step = self.radiobuttonvar.get()
+        encrypted = InterfaceIC.crypt_funcs.encrypt(new_text, step)
+        
+        if encrypted == 1:
+            showinfo(message='Mensagem muito curta')
+        else:
+            self.text.delete(1.0, 'end')
+            self.text.insert(1.0, encrypted)
+        
+    def decrypto(self):
+        new_text = self.text.get(1.0, 'end')
+        new_text = new_text.rstrip()
+        step = self.radiobuttonvar.get()
+        decrypted = InterfaceIC.crypt_funcs.decrypt(new_text, step)
+        
+        if decrypted == 1:
+            showinfo(message='Mensagem não criptografada com o InnocenceCrypto')
+        else:
+            self.text.delete(1.0, 'end')
+            self.text.insert(1.0, decrypted)
+        
+    def encryptfile(self):
+        step = self.radiobuttonvar.get()
+        filetypes = (('text files', '*.txt'), ('All files', '*.*'))
+        filename = filedialog.askopenfilename(title = 'Open a file', initialdir='/', filetypes = filetypes)
+        
+        with open(filename, 'r') as file:
+            content = file.read()
+        
+        content = content.rstrip()
+        encrypted = InterfaceIC.crypt_funcs.encrypt(content, step)
+        
+        if encrypted == 1:
+            showinfo(message='Mensagem muito curta')
+        else:
+            self.text.delete(1.0, 'end')
+            self.text.insert(1.0, encrypted)
+        
+    def decryptfile(self):
+        step = self.radiobuttonvar.get()
+        filetypes = (('text files', '*.txt'), ('All files', '*.*'))
+        filename = filedialog.askopenfilename(title = 'Open a file', initialdir='/', filetypes = filetypes)
+        
+        with open(filename, 'r') as file:
+            content = file.read()
+            
+        content = content.rstrip()
+        decrypted = InterfaceIC.crypt_funcs.decrypt(content, step)
+        
+        if decrypted == 1:
+            showinfo(message='Mensagem não criptografada com o InnocenceCrypto')
+        else:
+            self.text.delete(1.0, 'end')
+            self.text.insert(1.0, decrypted)
 
-def decrypto():
-    global text, dictionary, radiobuttonvar
-    texto = text.get(1.0, 'end')
-    texto = texto.rstrip()
-    step = radiobuttonvar.get()
-    decrypted = crypt_funcs.decrypt(texto, step)
-    if decrypted == 1:
-        showinfo(message='Mensagem não criptografada com o InnocenceCrypto')
-    else:
-        text.delete(1.0, 'end')
-        text.insert(1.0, decrypted)
+    def savetofile(self):
+        filetypes = (('text files', '*.txt'), ('All files', '*.*'))
+        filename = filedialog.asksaveasfilename(title = 'Open a file', initialdir='/', filetypes = filetypes)
+        new_text = self.text.get(1.0, 'end')
+        new_text = new_text.rstrip()
+        
+        with open(filename, 'w') as file:
+            file.write(new_text)
+
+    def create_interface(self):
+        self.window.title('InnocenceCrypto')
+        self.window.geometry("500x550")
+        self.window.minsize(500, 550)
+        self.window.maxsize(500, 550)
+
+        self.__create_top_buttons()
+        self.__create_text_area()
+        self.__create_step_buttons()
+        self.__create_bottom_buttons()
+
+        self.__set_icon()
+        
+    def run(self):
+        self.create_interface()
+        self.window.mainloop()
     
-def encryptfile():
-    global text, radiobuttonvar
-    step = radiobuttonvar.get()
-    filetypes = (('text files', '*.txt'), ('All files', '*.*'))
-    filename = filedialog.askopenfilename(title = 'Open a file', initialdir='/', filetypes = filetypes)
-    file = open(filename, 'r')
-    content = file.read()
-    file.close()
-    content = content.rstrip()
-    encrypted = crypt_funcs.encrypt(content, step)
-    if encrypted == 1:
-        showinfo(message='Mensagem muito curta')
-    else:
-        text.delete(1.0, 'end')
-        text.insert(1.0, encrypted)
+    def __set_icon(self):
+        image = PhotoImage(file = './assets/icicon.gif')
+        self.window.iconphoto(False, image)
+        
+    def __create_text_area(self):
+        self.text = scrolledtext.ScrolledText(self.window)
+        self.text.pack()
+        
+    def __create_top_buttons(self):
+        frametop = Frame(self.window)
+        frametop.pack(side = TOP)
+
+        buttonencryptfile = Button(frametop, text = 'Encrypt a file', command = self.encryptfile)
+        buttonencryptfile.grid(row = 0, column = 0)
+
+        buttondecryptfile = Button(frametop, text = 'Decrypt a file', command = self.decryptfile)
+        buttondecryptfile.grid(row = 0, column = 1)
+
+        buttonsavetofile = Button(frametop, text = 'Save to file...', command = self.savetofile)
+        buttonsavetofile.grid(row = 0, column = 2)
     
-def decryptfile():
-    global text, radiobuttonvar
-    step = radiobuttonvar.get()
-    filetypes = (('text files', '*.txt'), ('All files', '*.*'))
-    filename = filedialog.askopenfilename(title = 'Open a file', initialdir='/', filetypes = filetypes)
-    file = open(filename, 'r')
-    content = file.read()
-    file.close()
-    content = content.rstrip()
-    decrypted = crypt_funcs.decrypt(content, step)
-    if decrypted == 1:
-        showinfo(message='Mensagem não criptografada com o InnocenceCrypto')
-    else:
-        text.delete(1.0, 'end')
-        text.insert(1.0, decrypted)
+    def __create_step_buttons(self):
+        frameradio = Frame(self.window)
+        frameradio.pack()
 
-def savetofile():
-    global text
-    filetypes = (('text files', '*.txt'), ('All files', '*.*'))
-    filename = filedialog.asksaveasfilename(title = 'Open a file', initialdir='/', filetypes = filetypes)
-    texto = text.get(1.0, 'end')
-    texto = texto.rstrip()
-    file = open(filename, 'w')
-    file.write(texto)
-    file.close()
+        labelstep = Label(frameradio, text = 'Step:')
+        labelstep.grid(row = 0, column = 1)
 
-root = Tk() #Main Widged
-root.title('InnocenceCrypto')#Main window title
-root.geometry("500x550")# Adjust size
-root.minsize(500, 550)# set minimum window size value
-root.maxsize(500, 550)# set maximum window size value
+        step = 4
+        for i in range(1, 3):
+            if step > 8:
+                break
+            for a in range(3):
+                if step > 8:
+                    break
+                radio = Radiobutton(frameradio, text = step,value = step, variable = self.radiobuttonvar)
+                radio.grid(row = i, column = a)
+                radio.select()
+                step += 1
+    
+    def __create_bottom_buttons(self):
+        framedown = Frame(self.window)
+        framedown.pack(side = BOTTOM)
+                    
+        buttonencrypt = Button(framedown, text = 'Encrypt', command = self.encrypto)
+        buttonencrypt.grid(row = 0, column = 0)
 
-radiobuttonvar = IntVar()#Declare the radiobuttons variable
+        buttondecrypt = Button(framedown, text = 'Decrypt', command = self.decrypto)
+        buttondecrypt.grid(row = 0, column = 1)
 
-frametop = Frame(root)#Make a frame for the top buttons
-frametop.pack(side = TOP)
+        buttonquit = Button(framedown, text = 'Exit', command = self.window.destroy)
+        buttonquit.grid(row = 0, column = 2)
 
-#Make the button to encrypt, a button to decrypt a file and a button to save to file
-buttonencryptfile = Button(frametop, text = 'Encrypt a file', command = encryptfile)
-buttonencryptfile.grid(row = 0, column = 0)
-
-buttondecryptfile = Button(frametop, text = 'Decrypt a file', command = decryptfile)
-buttondecryptfile.grid(row = 0, column = 1)
-
-buttonsavetofile = Button(frametop, text = 'Save to file...', command = savetofile)
-buttonsavetofile.grid(row = 0, column = 2)
-
-#Make textbox with a scrollbar and postion on the main widget
-text = scrolledtext.ScrolledText(root)
-text.pack()
-
-#Make the step selection
-frameradio = Frame(root)
-frameradio.pack()
-
-labelstep = Label(frameradio, text = 'Step:')
-labelstep.grid(row = 0, column = 1)
-
-step = 4
-for i in range(1, 3):
-    if step > 8:
-        break
-    for a in range(3):
-        if step > 8:
-            break
-        radio = Radiobutton(frameradio, text = step,value = step, variable = radiobuttonvar)
-        radio.grid(row = i, column = a)
-        radio.select()
-        step += 1
-
-#Make the 3 buttons
-framedown = Frame(root)
-framedown.pack(side = BOTTOM)
-               
-buttonencrypt = Button(framedown, text = 'Encrypt', command = encrypto)
-buttonencrypt.grid(row = 0, column = 0)
-
-buttondecrypt = Button(framedown, text = 'Decrypt', command = decrypto)
-buttondecrypt.grid(row = 0, column = 1)
-
-buttonquit = Button(framedown, text = 'Exit', command = root.destroy)
-buttonquit.grid(row = 0, column = 2)
-
-#The icon
-image = PhotoImage(file = './assets/icicon.gif')
-root.iconphoto(False, image)
-
-#Run the window
-root.mainloop()
+    
