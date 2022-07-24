@@ -79,7 +79,7 @@ class CryptFunctions:
                     decrypted += word
                 else:
                     #se chegar no começo da lista ir para o fim
-                    if ord(letter) - step < 33:
+                    if ord(letter) - step < 34:
                         decrypted += self.dictionary[((ord(letter) - step)+94)]
                     else:
                         decrypted += self.dictionary[ord(letter)- step]

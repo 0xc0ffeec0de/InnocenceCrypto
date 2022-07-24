@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import filedialog
 from tkinter.messagebox import showinfo
 import tkinter.scrolledtext as scrolledtext
-from src.cryptfunctions import CryptFunctions
+from src.cryptfunctions import CryptFunctions 
 
 
 class InterfaceIC:
@@ -17,7 +17,6 @@ class InterfaceIC:
         
     def encrypto(self):
         new_text = self.text.get(1.0, 'end')
-        new_text = new_text.rstrip()
         step = self.radiobuttonvar.get()
         encrypted = InterfaceIC.crypt_funcs.encrypt(new_text, step)
         
@@ -29,7 +28,6 @@ class InterfaceIC:
         
     def decrypto(self):
         new_text = self.text.get(1.0, 'end')
-        new_text = new_text.rstrip()
         step = self.radiobuttonvar.get()
         decrypted = InterfaceIC.crypt_funcs.decrypt(new_text, step)
         
@@ -47,7 +45,6 @@ class InterfaceIC:
         with open(filename, 'r') as file:
             content = file.read()
         
-        content = content.rstrip()
         encrypted = InterfaceIC.crypt_funcs.encrypt(content, step)
         
         if encrypted == 1:
@@ -64,7 +61,6 @@ class InterfaceIC:
         with open(filename, 'r') as file:
             content = file.read()
             
-        content = content.rstrip()
         decrypted = InterfaceIC.crypt_funcs.decrypt(content, step)
         
         if decrypted == 1:
@@ -77,7 +73,6 @@ class InterfaceIC:
         filetypes = (('text files', '*.txt'), ('All files', '*.*'))
         filename = filedialog.asksaveasfilename(title = 'Open a file', initialdir='/', filetypes = filetypes)
         new_text = self.text.get(1.0, 'end')
-        new_text = new_text.rstrip()
         
         with open(filename, 'w') as file:
             file.write(new_text)
