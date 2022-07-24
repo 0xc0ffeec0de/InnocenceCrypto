@@ -1,6 +1,8 @@
+import string
+
 def generatedictionary():
 
-    estringue = '!"#$%&' + "'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+    estringue = string.ascii_letters + string.digits + string.punctuation
     dictionary = dict()
 
     #Cria dicionario usando o numero decimal de cada simbolo como chave valendo o simbolo
@@ -9,11 +11,11 @@ def generatedictionary():
 
     return dictionary
 
-def encrypt(dictionary: dict, string: str, step: int):
-    if len(string) <= 3:
+def encrypt(dictionary: dict, string_arg: str, step: int):
+    if len(string_arg) <= 3:
         return 1
     wordlist = [] #guarda a lista de palavras
-    newstring = string.split(sep = '\n') #divide a string por quebra de linha
+    newstring = string_arg.split(sep = '\n') #divide a string por quebra de linha
     #separa as palavras por espaços adicionando quebra de linha no fim a cada quebra de linha
     for word in newstring:
         if word == '':
@@ -43,13 +45,13 @@ def encrypt(dictionary: dict, string: str, step: int):
 
     return encrypted
 
-def decrypt(dictionary: dict, string: str, step: int):
+def decrypt(dictionary: dict, string_arg: str, step: int):
 
-    if string[0:2] != 'IC':
+    if string_arg[0:2] != 'IC':
         return 1
     
     wordlist = [] #guarda a lista de palavras
-    newstring = string[2:-1].split(sep = '\n') #divide a string por quebra de linha
+    newstring = string_arg[2:-1].split(sep = '\n') #divide a string por quebra de linha
     #separa as palavras por espaços adicionando quebra de linha no fim a cada quebra de linha
     for word in newstring:
         if word == '':
