@@ -18,7 +18,7 @@ For the program, just run the following command start in the terminal
     python innocence-crypto.py
 ```
 
-Or Make the file executable with the following command
+Or make the file executable with the following command
 
 ```console
     chmod +x innocence-crypto.py
